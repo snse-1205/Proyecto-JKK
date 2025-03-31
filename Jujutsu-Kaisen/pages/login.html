@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="icon" type="image/png" href="../img/icons8-satoru-gojo-16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body style="font-family: 'Oswald', sans-serif;">
+    <div class="Login">
+        <h1>Inicio de sesion</h1>
+        <form method="post">
+            <div class="campos">
+                <input type="text" class="email" id="email" name="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="campos">
+                <input type="password" class="pass" id="pass" name="pass" required>
+                <label for="pass">Contraseña</label>
+            </div>
+            <div class="mensaje" id="mensaje" name="mensaje"></div>
+            <div class="boton">
+                <input type="submit" value="Entrar">
+            </div>
+
+            <div class="boton" style="padding-top: 15px;">
+                <input type="button" value="Desconectar" id="cancelarSesion">
+            </div>
+
+            <div class="registro">
+                <a href="../pages/registro.html">Registro</a>
+            </div>
+        </form>
+
+        <div class="boton">
+            <a href="index.html">
+                <img src="../img/5397386.png">
+            </a>
+        </div>
+        
+</div>
+    <script type="text/javascript" src="../js/login.js"></script>
+</body>
+
+</html>

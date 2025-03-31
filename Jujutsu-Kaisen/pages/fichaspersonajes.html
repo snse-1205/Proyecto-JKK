@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jujutsu Kaisen Wiki Fandom</title>
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/fichaspersonajes.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="icon" type="image/png" href="../img/icons8-satoru-gojo-16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="contenedor">
+
+        <div class="head" id="miDiv">
+            <div class="logo">
+                <a href="../pages/login.html">
+                    <img src="../img/letraslogo.png" style="width:300px">
+                </a>
+                <a id="login-status-link">
+                    <img id="login-status-img" src="../img/circulodesactivo.png" style="width: 25px" />
+                </a> 
+            </div>
+            <nav class="navbar">
+                <a href="../pages/index.html" class="iniciar">Inicio</a>
+                <a href="../pages/manga.html">Manga</a>
+                <a href="../pages/tecnicas.html">Tecnicas</a>
+                <a href="../pages/armas.html">Armas malditas</a>
+                <a href="../pages/fichaspersonajes.html">Personajes</a>
+            </nav>
+        </div>
+        <script src="../js/scrolly.js"></script>
+
+        <header class="content header">
+            <h1 class="title">Fichas de Personajes</h1>
+            <p style="margin-left: 10%; margin-right: 10%; font-size: 40px;">
+            </p>
+        </header>
+
+        <div id="barraSuperior">
+            <div class="left">
+                <label for="nombreBusqueda">Buscar por Nombre:</label>
+                <input type="text" id="nombreBusqueda" onkeyup="buscarPorNombre()" placeholder="Buscar personaje...">
+                <label for="tecnicaSpinner">Filtrar por Técnica Maldita:</label>
+                <select id="tecnicaSpinner" onchange="filtrarPorTecnica()">
+                    <option value="">Seleccionar Técnica</option>
+                    <option value="Tecnica Innata">Tecnica Innata</option>
+                    <option value="Tecnica Hereditaria">Tecnica Hereditaria</option>
+                    <option value="Tecnica de Barrera">Tecnica de Barrera</option>
+                    <option value="Tecnica de Nuevo Estilo de Sombra">Tecnica de Nuevo Estilo de Sombra</option>
+                    <option value="Tecnica de Maldicion Inversa">Tecnica de Maldicion Inversa</option>
+                    <option value="Sin Tecnica">Sin Tecnica</option>
+                    <option value="Desconocido">Desconocido</option>
+                </select>
+            </div>
+
+            <div class="right">
+                <button id="createFicha" onclick="abrirFormulario()">
+                    Crear
+                </button>
+            </div>
+        </div>
+        <div class="encimadelotro">
+            <div id="margencaja">
+                <table id="tablaFichas">
+                    <thead>
+                        <tr>
+                            <th style="display: none;">ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Género</th>
+                            <th>Edad</th>
+                            <th>Estado</th>
+                            <th>Técnica Maldita</th>
+                            <th>Foto</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+
+                <div id="modalFormulario" style="display: none;">
+                    <form id="formFicha" enctype="multipart/form-data" onsubmit="guardarFicha(event)">
+                        <div id="contenedorformulario">
+                            <div class="left">
+                                <input type="hidden" id="id" name="id">
+
+                                <label>Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" required><br>
+
+                                <label>Descripción:</label>
+                                <textarea id="descripcion" name="descripcion" required></textarea><br>
+
+                                <label>Género:</label>
+                                <input type="text" id="genero" name="genero" required><br>
+
+                                <label>Edad:</label>
+                                <input type="number" id="edad" name="edad" required><br>
+                            </div>
+                            <div class="right">
+                                <label>Estado:</label>
+                                <input type="text" id="estado" name="estado" required><br>
+
+                                <label>Técnica:</label>
+                                <select id="MalitoSpinnerFunciona" onchange="obtenerIDTecnica()">
+                                    <option value="Seleccione Tecnica">Seleccione Tecnica</option>
+                                    <option value="Tecnica Innata">Tecnica Innata</option>
+                                    <option value="Tecnica Hereditaria">Tecnica Hereditaria</option>
+                                    <option value="Tecnica de Barrera">Tecnica de Barrera</option>
+                                    <option value="Tecnica de Nuevo Estilo de Sombra">Tecnica de Nuevo Estilo de Sombra
+                                    </option>
+                                    <option value="Tecnica de Maldicion Inversa">Tecnica de Maldicion Inversa</option>
+                                    <option value="Sin Tecnica">Sin Tecnica</option>
+                                    <option value="Desconocido">Desconocido</option>
+                                </select>
+
+                                <input type="hidden" id="tecnicaMalditaID" name="tecnicaMalditaID">
+                                <br>
+
+                                <label>Foto:</label>
+                                <input type="file" name="Avatar" id="foto" accept="image/*"
+                                    onchange="previewImage(event)"/>
+                                <div id="image-container"></div>
+
+                                <input type="hidden" id="fotoid" name="fotoid">
+
+                                <label>Expansión de Dominio:</label>
+                                <input type="checkbox" id="expansionDominio" name="expansionDominio"><br>
+                            </div>
+                        </div>
+                        <button type="submit">Guardar</button>
+                        <button type="button" onclick="cerrarFormulario()">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="contenedorpaginado">
+                <div>
+                    <button id="previousButton" onclick="cargarPagina(actualPage - 1)">Anterior</button>
+                    <button id="nextButton" onclick="cargarPagina(actualPage + 1)">Siguiente</button>
+                    <div id="pagination"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="../js/fichaspersonajes.js"></script>
+
+        <footer>
+            <div class="conteinerboxes">
+                <div class="conteinerbox">
+                    <img src="../img/letraslogo.png" style="width:60%; margin-top: 15px;">
+                </div>
+                <div class="conteinerbox">
+                    <div class="conteinerboxes">
+                        <a href="https://x.com/jujutsuakutami?lang=es" target="_blank">
+                            <img src="../img/x.png" class="icono">
+                        </a>
+                        <a href="https://www.instagram.com/GegeAkutami/?hl=es" target="_blank">
+                            <img src="../img/icons8-instagram-60.png" class="icono">
+                        </a>
+                        <a href="https://www.mappa.co.jp/en/" target="_blank">
+                            <img src="../img/redmappa.png" class="icono" style="margin-top: 40%;">
+                        </a>
+                    </div>
+                    <div style="font-size: 18px;">
+                        <p>Sitio web realizado por:</p>
+                        <ol> Franklin Teruel </ol>
+                        <ol> Stacy Sauceda</ol>
+                    </div>
+
+                </div>
+                <div class="conteinerbox">
+                    <a href="../pages/index.html" class="listapaginas">Inicio</a>
+                    <a href="../pages/manga.html" class="listapaginas">Manga</a>
+                    <a href="../pages/tecnicas.html" class="listapaginas">Tecnicas</a>
+                    <a href="../pages/armas.html" class="listapaginas">Armas Malditas</a>
+                    <a href="../pages/fichaspersonajes.html" class="listapaginas">Personajes</a>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript" src="../js/inicio.js"></script>
+        <script type="text/javascript" src="../js/botonactivo.js"></script>
+    </div>
+</body>
+
+</html>
