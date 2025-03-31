@@ -1,0 +1,383 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #410101;
+  background-image: linear-gradient(to right, #410101, #0B0614);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Oswald", sans-serif;
+  color: #fff;
+}
+
+.header {
+  height: 80vh !important;
+  background: url(../img/ca181c1562321774a836715f2571577b.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.title {
+  margin-bottom: 0px;
+  font-size: 80px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgb(189, 76, 76);
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+}
+
+#pagination {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.encimadelotro{
+  display: flex;
+  flex-direction: column;
+  min-height: 200vh;
+  margin: 0;
+}
+
+#margencaja {
+  flex: 1;
+  background-color: #410101;
+  background-image: linear-gradient(to right, #410101, #0B0614);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+  overflow-y: auto;
+}
+
+#contenedorpaginado {
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#modalFormulario {
+  background-image: linear-gradient(to top, #0B0614, #410101);
+  border-radius: 15px;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.4);
+  color: gray;
+  padding: 20px; 
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto; 
+  display: block;
+}
+
+#modalFormulario label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  display: block;
+  color: white;
+}
+
+#modalFormulario input[type="text"],
+#modalFormulario input[type="number"],
+#modalFormulario select,
+#modalFormulario textarea,
+#modalFormulario input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+#modalFormulario button {
+  padding: 12px 20px;
+  background-color: #410101;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#modalFormulario button:hover {
+  background-color: #0B0614;
+}
+
+#image-container {
+  margin-top: 15px;
+}
+
+#previousButton,
+#nextButton {
+  padding: 10px 15px;
+  background-color: #410101;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 5px;
+  transition: background-color 0.3s ease;
+}
+
+#previousButton:hover,
+#nextButton:hover {
+  background-color: #0B0614;
+}
+
+#createFicha {
+  padding: 10px 15px;
+  background-color: #410101;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 5px;
+  transition: background-color 0.3s ease;
+  width: 150px;
+  font-size: 25px;
+}
+
+#createFicha:hover {
+  background-color: #0B0614;
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
+  margin-top: 20px;
+}
+
+#pagination button {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: white;
+  background-color: #410101; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#pagination button:disabled {
+  background-color: #0B0614; 
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+#pagination button:hover:not(:disabled) {
+  background-color: #8b0000; 
+  transform: scale(1.1); 
+}
+
+#previousButton, #nextButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #410101;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#previousButton:hover, #nextButton:hover {
+  background-color: #8b0000; 
+}
+
+#previousButton:disabled, #nextButton:disabled {
+  background-color: #0B0614;
+  cursor: not-allowed;
+}
+
+#barraSuperior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  gap: 10px;
+}
+
+#barraSuperior .left,
+#barraSuperior .right {
+  display: flex;
+  align-items: center;
+}
+
+#barraSuperior input[type="text"],
+#barraSuperior select,
+#barraSuperior button {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+#barraSuperior .left {
+  flex: 1;
+  gap: 10px;
+  margin-left: 40px;
+}
+
+#barraSuperior .right {
+  justify-content: flex-end;
+  margin-left: 50px;
+  flex-shrink: 0;
+}
+
+#contenedorformulario {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  margin: 60px 20px 20px; 
+  gap: 20px; 
+}
+
+#contenedorformulario .left,
+#contenedorformulario .right {
+  display: flex;
+  flex-direction: column; 
+  gap: 15px; 
+}
+
+#contenedorformulario .left {
+  flex: 1; 
+  margin-left: 20px;
+}
+
+#contenedorformulario .right {
+  flex: 1; 
+  margin-right: 20px;
+}
+
+#tablaFichas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+#tablaFichas th,
+#tablaFichas td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#tablaFichas th {
+  background-color: #410101;
+  color: white;
+}
+
+#tablaFichas td:nth-child(2) {
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#modalFormulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.foto-dinamica {
+  width: 100px; 
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.foto-dinamica:hover {
+  transform: scale(2); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+#modalFormulario label {
+  font-weight: bold;
+}
+
+#modalFormulario input,
+#modalFormulario select,
+#modalFormulario textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+#modalFormulario textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#modalFormulario button {
+  padding: 10px 20px;
+  background-color: #410101;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#modalFormulario button:hover {
+  background-color: #5A0202;
+}
+
+#tablaFichas button {
+  padding: 8px 16px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%;
+}
+
+#tablaFichas button.editButton {
+  background-color: white;
+  color: black;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#tablaFichas button.deleteButton {
+  background-color: white; 
+  color: black;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#tablaFichas button.deleteButton:hover {
+  transform: translateY(-3px);
+  background-color: #410101;
+  color: white;
+  box-shadow: 0 4px 8px rgba(131, 10, 10, 0.459);
+}
+
+#tablaFichas button.editButton:hover {
+  transform: translateY(-3px);
+  background-color: #0B0614;
+  color: white;
+  box-shadow: 0 4px 8px (131, 10, 10, 0.459);
+}
+
+#tablaFichas button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px #0B0614;
+}
+
+#tablaFichas td:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
