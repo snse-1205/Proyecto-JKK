@@ -1,0 +1,16 @@
+npm init -y
+npm install express
+npm install mongoose
+npm install bcryptjs
+npm install jsonwebtoken
+npm install --save multer
+
+Datos Importantes ---------------------------------------------
+
+* A la hora de verificar el rol de cada usuario, 
+en Bruno, se debe ir a 'Headers', y en el apartado del 'id', 
+se coloca el id del usuario con el rol de 'admin',
+para asi poder crear, modificar, y eliminar.
+
+* Leer y Buscar se va a poder realizar sin necesidad del login.
+Excepto buscar fichas por id.
