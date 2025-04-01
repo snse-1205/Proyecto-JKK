@@ -1,0 +1,26 @@
+meta {
+  name: Crear Tecnicas Malditas
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{URL_INI}}:{{PORT_INI}}/TecnicasMalditas
+  body: json
+  auth: bearer
+}
+
+headers {
+  id: 67395571082c988140b69918
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Mzk1NTcxMDgyYzk4ODE0MGI2OTkxOCIsImVtYWlsIjoibmF0aGFsaWFAZ21haWwuY29tIiwiaWF0IjoxNzMxODExNTM0fQ.JAyWt-f56NexCBeTFepv0jCPNkuIXzrHJLeJgoexUB8
+}
+
+body:json {
+  {
+    "tecnicaMaldita": "Técnicas Innatas",
+      "descripcion": "Son aquellas técnicas que se forman sí el usuario nace con las capacidades de utilizarlas, es decir, sí el usuario nace con el talento innato de poder utilizar una técnica."
+  }
+}

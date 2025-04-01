@@ -1,0 +1,17 @@
+meta {
+  name: Crear Roles
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{URL_INI}}:{{PORT_INI}}/RolUser
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "rol": "admin"
+  }
+}

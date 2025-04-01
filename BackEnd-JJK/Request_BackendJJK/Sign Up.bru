@@ -1,0 +1,19 @@
+meta {
+  name: Sign Up
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{URL_INI}}:{{PORT_INI}}/signup
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "nathalia@gmail.com",
+    "password": "1234",
+    "rolUser": "674c1c0f3d151591f765014f"
+  }
+}

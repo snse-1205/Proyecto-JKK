@@ -1,0 +1,25 @@
+meta {
+  name: Leer Fichas por Nombre
+  type: http
+  seq: 17
+}
+
+get {
+  url: {{URL_INI}}:{{PORT_INI}}/buscarPorNombreFicha?nombre=Nanami
+  body: none
+  auth: none
+}
+
+params:query {
+  nombre: Nanami
+}
+
+body:json {
+  {
+    "nombre":"Nanami Kento"
+  }
+}
+
+body:text {
+  Nanami Kento
+}

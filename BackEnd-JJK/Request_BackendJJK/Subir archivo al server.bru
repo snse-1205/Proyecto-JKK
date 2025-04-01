@@ -1,0 +1,25 @@
+meta {
+  name: Subir archivo al server
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{URL_INI}}:{{PORT_INI}}/upload
+  body: multipartForm
+  auth: none
+}
+
+headers {
+  ~id: 674c1d803d151591f7650172
+}
+
+body:json {
+  {
+    "id": "67354bc393653071db4bdef6"
+  }
+}
+
+body:multipart-form {
+  Avatar: @file(C:\Users\Stacy Sauceda\Desktop\images.jpeg)
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Leer Fichas por Genero
+  type: http
+  seq: 19
+}
+
+get {
+  url: {{URL_INI}}:{{PORT_INI}}/buscarPorGeneroFicha?genero=Masculino
+  body: none
+  auth: none
+}
+
+params:query {
+  genero: Masculino
+}

@@ -1,0 +1,17 @@
+meta {
+  name: Leer Roles por Nombre
+  type: http
+  seq: 25
+}
+
+get {
+  url: {{URL_INI}}:{{PORT_INI}}/NombreporId
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "nombreRol":"user"
+  }
+}

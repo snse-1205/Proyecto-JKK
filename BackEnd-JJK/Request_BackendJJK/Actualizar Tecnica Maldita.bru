@@ -1,0 +1,22 @@
+meta {
+  name: Actualizar Tecnica Maldita
+  type: http
+  seq: 12
+}
+
+put {
+  url: {{URL_INI}}:{{PORT_INI}}/TecnicasMalditas/:id
+  body: json
+  auth: none
+}
+
+params:path {
+  id: 67395945ecf590a7a76fbe68
+}
+
+body:json {
+  {
+    "tecnicaMaldita": "Tecnicas Innatas",
+      "descripcion": "Son aquellas técnicas que se forman sí el usuario nace con las capacidades de utilizarlas, es decir, sí el usuario nace con el talento innato de poder utilizar una técnica."
+  }
+}

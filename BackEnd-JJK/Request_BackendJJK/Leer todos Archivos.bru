@@ -1,0 +1,15 @@
+meta {
+  name: Leer todos Archivos
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{URL_INI}}:{{PORT_INI}}/leerArchivos
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Mzk1NTcxMDgyYzk4ODE0MGI2OTkxOCIsImVtYWlsIjoibmF0aGFsaWFAZ21haWwuY29tIiwiaWF0IjoxNzMxODExNTM0fQ.JAyWt-f56NexCBeTFepv0jCPNkuIXzrHJLeJgoexUB8
+}

@@ -1,0 +1,32 @@
+meta {
+  name: Crear Ficha Personaje
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{URL_INI}}:{{PORT_INI}}/FichasPersonajes
+  body: json
+  auth: bearer
+}
+
+headers {
+  id: 674c1d803d151591f7650172
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGMxZDgwM2QxNTE1OTFmNzY1MDE3MiIsImVtYWlsIjoibmF0aGFsaWFAZ21haWwuY29tIiwiaWF0IjoxNzMzMDQxODcwfQ.4bw67st6-e5fjtEZoGz9dLW3cNNSKA9qLU2OXNWVLI4
+}
+
+body:json {
+  {
+    "nombre": "Nanami Kento",
+      "descripcion": "Es uno de los personajes de la serie manga Jujutsu Kaisen. Fue un chamán de primer grado, antiguo alumno del Colegio Técnico de Magia Metropolitana de Tokio y compañero de Yu Haibara.",
+      "genero": "Masculino",
+      "edad": "28",
+      "estado": "Muerto",
+      "tecnicaMaldita": "674c1c0f3d151591f765015b",
+      "foto": "674fa541a681384094dbee1e",
+      "expansionDominio":"true" 
+  }
+}

@@ -1,0 +1,30 @@
+meta {
+  name: Eliminar Archivo
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{URL_INI}}:{{PORT_INI}}/deleteFile/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 673943691e3f1ec8b0da837b
+}
+
+headers {
+  id: 673942bf1e3f1ec8b0da8375
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Mzk0MmJmMWUzZjFlYzhiMGRhODM3NSIsImVtYWlsIjoibmF0aGFsaWFAZ21haWwuY29tIiwiaWF0IjoxNzMxODA1OTIyfQ.6yvM83yI9kigZmLKLcQXdQQbBKf8vR01hWkmR4HPxp8
+}
+
+body:json {
+  {
+    "id": "673943691e3f1ec8b0da837b",
+    "nombre": "1731806057215-gojoinsane.jpg"
+  }
+}
